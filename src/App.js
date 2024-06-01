@@ -2,26 +2,32 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-const emp1 ={
-  name:"vishal"
-};
-const emp2= {
-  name:"vishal"
-}
-if (emp1.name=== emp2.name){
-  console.log("hello");}
-  else{
-console.log("world");
-  }
+// const emp1 ={
+//   name:"vishal"
+// };
+// const emp2= {
+//   name:"vishal"
+// }
+// if (emp1.name=== emp2.name){
+//   console.log("hello");}
+//   else{
+// console.log("world");
+//   }
   
-const fun=()=>{
-  const num1 = 8;
-  const num2 = 2;
-  console.log(num1+num2);
-};
-if(emp1.name===emp2.name){
-fun();
+// const fun=()=>{
+//   const num1 = 8;
+//   const num2 = 2;
+//   console.log(num1+num2);
+// };
+// if(emp1.name===emp2.name){
+// fun();
+// }
+
+const arr1 = [1,2,3,4,5]
+for (let item of arr1){
+  console.log(item)
 }
+
 
 
 
