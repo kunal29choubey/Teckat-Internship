@@ -2,6 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+const emp1 ={
+  name:"vishal"
+};
+const emp2= {
+  name:"vishal"
+}
+if (emp1.name=== emp2.name){
+  console.log("hello");}
+  else{
+console.log("world");
+  }
+  
+const fun=()=>{
+  const num1 = 8;
+  const num2 = 2;
+  console.log(num1+num2);
+};
+if(emp1.name===emp2.name){
+fun();
+}
+
+
+
   return (
     <div className="App">
       <header className="App-header">
