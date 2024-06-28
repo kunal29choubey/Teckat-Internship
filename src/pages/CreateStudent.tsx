@@ -1,4 +1,3 @@
-
 import React from "react";
 import { IStudent } from "../interface/Student";
 import { useForm } from "react-hook-form";
@@ -12,20 +11,26 @@ const CreateStudent: React.FC = () => {
     formState: { errors },
   } = useForm<IStudent>({ mode: "all" });
 
-  const createNewStudent = (data: IStudent) => {
-    console.log(data);
+  
 
-    localStorage.setItem("Student", JSON.stringify(data));
+    // localStorage.setItem("Student", JSON.stringify(data));
 
-    // const students: IStudent[] = JSON.parse(
-    //   localStorage.getItem("students") as string
-    // );
-    // data._id = (students.length + 1).toString();
-
-    // students.push(data);
-    // localStorage.setItem("students", JSON.stringify(students));
-    // navigate("/student/student-details");
-  };
+    const createNewStudent = (data: IStudent) => {
+      let students: IStudent[] = [];
+      const newStudent = JSON.parse(localStorage.getItem("students") as string);
+      if (newStudent) {
+        data._id = (students.length + 1).toString();
+        students = newStudent;
+      } else {
+        data._id = (0).toString();
+      }
+      students.push(data);
+      console.log(data);
+      
+      localStorage.setItem("students", JSON.stringify(students));
+      // navigate("/student");
+    };
+  
   return (
     <>
       <div className="create_student_section">
@@ -44,7 +49,9 @@ const CreateStudent: React.FC = () => {
             <div className="error_message">{errors.name?.message}</div>
           </div>
           <div>
-            <label htmlFor="age"></label>
+            <div>
+              <label htmlFor="age">AGE</label>
+            </div>
             <input
               title="age"
               type="number"
@@ -57,7 +64,7 @@ const CreateStudent: React.FC = () => {
             <div className="error_message">{errors.age?.message}</div>
           </div>
           <div>
-            <label htmlFor="phone"></label>
+            <label htmlFor="phone">Phone</label>
             <input
               title="phone"
               type="number"
@@ -70,7 +77,7 @@ const CreateStudent: React.FC = () => {
             <div className="error_message">{errors.phone?.message}</div>
           </div>
           <div>
-            <label htmlFor="email"></label>
+            <label htmlFor="email">Email</label>
             <input
               title="email"
               type="text"

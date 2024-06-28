@@ -86,3 +86,4 @@ console.log(newData);
 
 
 export default HomePage
+
